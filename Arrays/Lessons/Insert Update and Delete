@@ -1,0 +1,38 @@
+const array = [1, 2, 3, 4, 5];
+
+console.log('original array = ', array)
+// insert 0 at the 3rd element position
+// find the index, splice the array but delete nothing and just insert
+array.splice(2,0,0)
+console.log('added zero array = ', array)
+
+// deleting an element at the 3rd place
+// find the index and splice how many you want to delete
+array.splice(2,1)
+console.log('removed zero array = ', array)
+
+// updating an element at an index
+// just find the element's index and update it
+array[array.length-1] = 10
+console.log('updated array = ', array)
+
+// Test the function
+console.log('----------------------------')
+const numbersWithDuplicates = [1, 2, 2, 3, 4, 4, 5];
+
+//Removing duplicate
+
+// loop through the array
+// if you find an element that has already been through the loop, remove using splice method
+
+const removeDuplicate = (arr) => {
+uniqueArr = []
+  arr.forEach((element, indx) => {
+    if(!uniqueArr.includes(element)){
+      uniqueArr.push(element)
+    }
+  })
+  return uniqueArr
+}
+
+console.log(removeDuplicate(numbersWithDuplicates))
