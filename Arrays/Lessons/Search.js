@@ -49,3 +49,36 @@ const binarySearch = (arr, target) => {
 }
 
 console.log(binarySearch([1, 4, 8, 2, 9, 5, 3], 10))
+
+//
+console.log('----------------------------------')
+//
+// Write a function findFirstOccurrence that takes a sorted array and a target element as input and returns the index of the first occurrence of the target element in the array. If the target element is not present in the array, return -1.
+
+const findFirstOccurrence = (arr, target) => {
+  let left = 0;
+  let right = arr.length - 1;
+  let results;
+
+  while (left <= right){
+    const mid = Math.floor((left+right)/2)
+
+    if(target === arr[mid]){
+      results = mid
+      right = mid - 1
+    } else if(target > arr[mid]){
+      left = mid +1
+    } else {
+      right = mid -1
+      }
+  }
+  if(results){
+    return results
+  }
+  return `${target} was not present`
+  
+}
+
+const sortedNumbers = [1, 2, 3, 3, 3, 4, 5, 5, 6];
+const target = 3;
+console.log(findFirstOccurrence(sortedNumbers, target));
