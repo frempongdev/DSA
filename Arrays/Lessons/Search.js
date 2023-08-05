@@ -25,9 +25,9 @@ console.log('----------------------------------')
 //
 
 // Binary Search
-// divide the chucnk into two using midpoint/pivot
-// check if target is greater than if so discard left
-// repeat until you find the target.
+// divide the chunk into two using midpoint/pivot
+// Check if target is greater than mid if so discard left, else discard right
+// repeat until you find the target. (mid===target)
 
 const binarySearch = (arr, target) => {
   let sortedArr = arr.sort((a,b) => a - b)
