@@ -19,3 +19,33 @@ const linearSearch = (arr, target) => {
 }
 
 console.log(linearSearch(array, 3))
+
+//
+console.log('----------------------------------')
+//
+
+// Binary Search
+// divide the chucnk into two using midpoint/pivot
+// check if target is greater than if so discard left
+// repeat until you find the target.
+
+const binarySearch = (arr, target) => {
+  let sortedArr = arr.sort((a,b) => a - b)
+  console.log(sortedArr)
+
+  let left = 0;
+  let right = sortedArr.length - 1;
+
+  while(left<=right){
+  let mid = Math.floor((left + right)/2);
+    if(target === sortedArr[mid]){
+      return `${sortedArr[mid]} is at index ${mid}`
+    } else if(target > sortedArr[mid]){
+      left = mid + 1
+    } else right = mid -1
+    
+  }
+  return `${target} is not found in the array`;
+}
+
+console.log(binarySearch([1, 4, 8, 2, 9, 5, 3], 10))
